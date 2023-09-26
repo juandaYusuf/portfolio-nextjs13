@@ -10,13 +10,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      height: {
+    height: {
         'calc-4': 'calc(100vh - 4rem)',
       },
       animation: {
         'gradient-x':'gradient-x 5s ease infinite',
         'gradient-y':'gradient-y 5s ease infinite',
         'gradient-xy':'gradient-xy 5s ease infinite',
+        'spin-slow': 'spin 7s linear infinite',
     },
     keyframes: {
         'gradient-y': {

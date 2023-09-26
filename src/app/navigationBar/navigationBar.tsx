@@ -20,6 +20,9 @@ import { CycleIcon } from "../../../public/svg/cycleIcon"
 import { GithubIcon } from "../../../public/svg/githubIcon"
 import { MoonIcon } from "../../../public/svg/moonIcon"
 import { SunIcon } from "../../../public/svg/sunIcon"
+import Image from "next/image"
+import BLogo from '../../../public/logo/black.png'
+import WLogo from '../../../public/logo/white.png'
 
 
 function NavigationBar({ children }: { children: React.ReactNode }) {
@@ -72,19 +75,19 @@ function NavigationBar({ children }: { children: React.ReactNode }) {
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
       >
-        <NavbarContent className="sm:hidden" justify="start">
+        <NavbarContent className="sm:hidden">
           <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
         </NavbarContent>
 
-        <NavbarContent className="sm:hidden pr-3" justify="center">
+        <NavbarContent className="sm:hidden" justify="center">
           <NavbarBrand>
-            <p className="font-extrabold text-2xl">Yusuf</p>
+            <Image src={theme === "dark"? WLogo : BLogo} width={60} height={60} alt="Logo"/>
           </NavbarBrand>
         </NavbarContent>
 
         <NavbarContent className="hidden sm:flex gap-5" justify="center">
           <NavbarBrand>
-            <p className="font-extrabold text-3xl">Yusuf</p>
+            <Image src={theme === "dark"? WLogo : BLogo} width={60} height={60} alt="Logo"/>
           </NavbarBrand>
           {
             menuItems.map((item, index) => (
@@ -106,7 +109,7 @@ function NavigationBar({ children }: { children: React.ReactNode }) {
         </NavbarContent>
 
         <NavbarContent justify="end">
-          <GithubIcon />
+          {/* <GithubIcon /> */}
           <CstmPopOver title="Skill improvment" content="Belum ada yang baru">
             <Button isIconOnly variant="light">
               <CycleIcon color={txtColorInverter} style="cursor-pointer" />
@@ -115,7 +118,7 @@ function NavigationBar({ children }: { children: React.ReactNode }) {
 
           <NavbarItem>
             <Switch
-              size="md"
+              size="sm"
               color="default"
               thumbIcon={({ isSelected, className }) => {
                 if (isSelected) {
