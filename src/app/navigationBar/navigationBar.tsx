@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useTheme } from "next-themes"
 import Link from "next/link"
+import { usePathname } from 'next/navigation';
 import {
   Button,
   Navbar,
@@ -17,7 +18,6 @@ import {
 import CstmButton from "../../components/cstmButton"
 import CstmPopOver from "@/components/popOver"
 import { CycleIcon } from "../../../public/svg/cycleIcon"
-import { GithubIcon } from "../../../public/svg/githubIcon"
 import { MoonIcon } from "../../../public/svg/moonIcon"
 import { SunIcon } from "../../../public/svg/sunIcon"
 import Image from "next/image"
@@ -29,6 +29,7 @@ function NavigationBar({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   const [windowScrollY, setWindowScrollY] = useState<number>(0)
   const { theme, setTheme } = useTheme()
+  const pathname = usePathname()
   const txtColorInverter = theme === "dark" ? "text-white" : "text-black"
   const menuItems = [
     "home",
@@ -38,6 +39,7 @@ function NavigationBar({ children }: { children: React.ReactNode }) {
     "about",
     "download CV"
   ]
+
 
 
   const navMenuItems = (
@@ -63,7 +65,6 @@ function NavigationBar({ children }: { children: React.ReactNode }) {
     </NavbarMenu>)
 
 
-
   return (
     <>
       <Navbar
@@ -81,27 +82,31 @@ function NavigationBar({ children }: { children: React.ReactNode }) {
 
         <NavbarContent className="sm:hidden" justify="center">
           <NavbarBrand>
-            <Image src={theme === "dark"? WLogo : BLogo} width={60} height={60} alt="Logo"/>
+            <Image src={theme === "dark" ? WLogo : BLogo} width={60} height={60} alt="Logo" />
           </NavbarBrand>
         </NavbarContent>
 
-        <NavbarContent className="hidden sm:flex gap-5" justify="center">
+        <NavbarContent className="hidden sm:flex gap-3 " justify="center">
           <NavbarBrand>
-            <Image src={theme === "dark"? WLogo : BLogo} width={60} height={60} alt="Logo"/>
+            <Image src={theme === "dark" ? WLogo : BLogo} width={60} height={60} alt="Logo" />
           </NavbarBrand>
           {
-            menuItems.map((item, index) => (
+            menuItems.map((items, index) => (
               <NavbarItem key={index}>
                 {
-                  item !== "download CV"
+                  items !== "download CV"
                     ?
-                    <Link className="capitalize" href={item === 'home' ? '/' : item}>
-                      {item}
-                    </Link>
+                    <div className={`py-2 transition duration-200 ${pathname === `/${items}` || pathname === '/' && items === "home" ?  theme === "dark" ? "border-b-3 border-white text-white" : "border-b-3 border-black text-black" : " border-b-3 border-transparent text-gray-400"}`}>
+                      <Link
+                        className={`capitalize font-semibold duration-200 py-1 px-3  ${theme === "dark" ? "hover:text-white hover:bg-gray-700 hover:rounded-md hover:border-0" : "hover:text-black hover:bg-gray-100 hover:rounded-md hover:border-0"}`}
+                        href={items === 'home' ? '/' : items}>
+                        {items}
+                      </Link>
+                    </div>
                     :
                     windowScrollY >= 560
                     &&
-                    <CstmButton name={item} />
+                    <CstmButton name={items} />
                 }
               </NavbarItem>
             ))
@@ -119,15 +124,19 @@ function NavigationBar({ children }: { children: React.ReactNode }) {
           <NavbarItem>
             <Switch
               size="sm"
-              color="default"
+              color="secondary"
               thumbIcon={({ isSelected, className }) => {
                 if (isSelected) {
                   setTheme('dark')
-                  return <SunIcon className={className} />
                 } else {
                   setTheme('light')
-                  return <MoonIcon className={className} />
                 }
+                return (
+                  isSelected ?
+                    <SunIcon className={className} />
+                    :
+                    <MoonIcon className={className} />
+                )
               }}>
             </Switch>
           </NavbarItem>

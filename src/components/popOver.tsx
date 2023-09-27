@@ -14,7 +14,7 @@ type TProps = {
 
 export default function CstmPopOver(props: TProps) {
   return (
-    <Popover placement="bottom" showArrow>
+    <Popover placement="bottom" showArrow >
       <PopoverTrigger>
         {props.children}
       </PopoverTrigger>
@@ -29,7 +29,9 @@ export default function CstmPopOver(props: TProps) {
                 <span className="text-slate-400">{props.content}</span>
               </div>
               :
+              <>
               <div className="text-tiny">Not yet updates</div>
+              </>
 
           }
         </div>
