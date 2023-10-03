@@ -1,7 +1,14 @@
 import { Metadata } from "next"
 
 export const metadata : Metadata = {
-  title: 'About | Portfolio - Yusuf Juanda',
+  title: 'About',
+  alternates: {
+    canonical: 'about',
+    languages: {
+      'en-US': '/en-US/about',
+      'id-ID': '/id-ID/about',
+    },
+  },
 }
 
 

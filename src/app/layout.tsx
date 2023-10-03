@@ -8,18 +8,21 @@ import NavigationBar from './navigationBar/navigationBar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://portfolio-juandayusuf.vercel.app/'),
+
+  title: {
+    default: 'Portfolio - Yusuf Juanda',
+    template: `%s | Portfolio - Yusuf Juanda`,
+  },
+  description: "Welcome to my personal portfolio, Yusuf Juanda.I am a dedicated frontend developer committed to creating engaging and functional web experiences. With experience and expertise in the latest web technologies, I work tirelessly to deliver solutions that bring captivating and responsive designs to every project. Explore my portfolio to see a variety of projects I have worked on, including the creation of modern websites, interactive web applications, and performance optimization. I am always enthusiastic about delivering innovative and creative solutions in the world of web development. Let's collaborate and bring your ideas to life in the digital realm.",
+  keywords: 'portfolio, yusuf juanda, frontend, reactjs, nextjs',
+  metadataBase: new URL('https://yusufjuanda.vercel.app/'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://yusufjuanda.vercel.app/',
     languages: {
       'en-US': '/en-US',
       'id-ID': '/id-ID',
     },
   },
-
-  title: 'Portfolio - Yusuf Juanda',
-  description: "Welcome to my personal portfolio, Yusuf Juanda.I am a dedicated frontend developer committed to creating engaging and functional web experiences. With experience and expertise in the latest web technologies, I work tirelessly to deliver solutions that bring captivating and responsive designs to every project. Explore my portfolio to see a variety of projects I have worked on, including the creation of modern websites, interactive web applications, and performance optimization. I am always enthusiastic about delivering innovative and creative solutions in the world of web development. Let's collaborate and bring your ideas to life in the digital realm.",
-  keywords: 'portfolio, yusuf juanda, frontend, reactjs, nextjs',
 
   icons: {
     icon: ['/icons/favicon.ico?v=4'],
@@ -27,10 +30,14 @@ export const metadata: Metadata = {
     shortcut: ['/icons/favicon.ico?v=4'],
   },
 
+  verification :{
+    google:'google1c1855279255b4a4',
+  },
+
   openGraph: {
     title: 'Portfolio - Yusuf Juanda',
     description: "Welcome to my personal portfolio, Yusuf Juanda.I am a dedicated frontend developer committed to creating engaging and functional web experiences. With experience and expertise in the latest web technologies, I work tirelessly to deliver solutions that bring captivating and responsive designs to every project. Explore my portfolio to see a variety of projects I have worked on, including the creation of modern websites, interactive web applications, and performance optimization. I am always enthusiastic about delivering innovative and creative solutions in the world of web development. Let's collaborate and bring your ideas to life in the digital realm.",
-    url: 'https://portfolio-juandayusuf.vercel.app/',
+    url: 'https://yusufjuanda.vercel.app/',
     siteName: 'Portfolio Yusuf Juanda',
     images: [
       {
@@ -48,26 +55,26 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-  
+
   authors: [{
     name: 'Yusuf Juanda',
-    url: 'https://portfolio-juandayusuf.vercel.app/'
+    url: 'https://yusufjuanda.vercel.app/'
   }],
 
   robots: {
-    index: false,
+    index: true,
     follow: true,
-    nocache: true,
+    nocache: false,
     googleBot: {
       index: true,
-      follow: false,
-      noimageindex: true,
-      'max-video-preview': -1,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': 1,
       'max-image-preview': 'large',
-      'max-snippet': -1,
+      'max-snippet': 1,
     },
   },
-  
+
   twitter: {
     card: 'summary_large_image',
     title: 'Portfolio - Yusuf Juanda',
