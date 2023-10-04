@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Providers } from './providers'
-import NavigationBar from './navigationBar/navigationBar'
+import HeaderAndFooter from '../components/navBarAndFooter'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -80,6 +80,7 @@ export const metadata: Metadata = {
     title: 'Portfolio - Yusuf Juanda',
     description: "Welcome to my personal portfolio, Yusuf Juanda.I am a dedicated frontend developer committed to creating engaging and functional web experiences. With experience and expertise in the latest web technologies, I work tirelessly to deliver solutions that bring captivating and responsive designs to every project. Explore my portfolio to see a variety of projects I have worked on, including the creation of modern websites, interactive web applications, and performance optimization. I am always enthusiastic about delivering innovative and creative solutions in the world of web development. Let's collaborate and bring your ideas to life in the digital realm.",
     // siteId: '1467726470533754880',
+    site : '@JuandaYusuf2',
     creator: '@JuandaYusuf2',
     // creatorId: '1467726470533754880',
     images: ['/metadataIMG/thumbnail.png'],
@@ -89,20 +90,22 @@ export const metadata: Metadata = {
 }
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <div className="fixed bottom-0 left-0 h-64 w-56 md:h-[40rem] md:w-96 translate-x-14 -rotate-[30deg] blur-2xl md:blur-3xl -z-10 r-0 b-0 bg-gradient-to-r from-sky-500 via-purple-500 opacity-[0.3]" />
         <div className="fixed right-0 h-96 w-48 md:h-[40rem] md:w-96 translate-x-20 md:translate-x-14 translate-y-20 -rotate-[80deg] rounded-t-full blur-3xl -z-10 r-0 b-0 bg-gradient-to-r from-sky-600 to-purple-400 opacity-[0.25] " />
         <Providers>
-          <NavigationBar>
+          <HeaderAndFooter>
             {children}
-          </NavigationBar>
+          </HeaderAndFooter>
         </Providers>
       </body>
     </html>
