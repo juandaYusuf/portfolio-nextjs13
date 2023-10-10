@@ -3,18 +3,18 @@
 import { Button, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Switch } from "@nextui-org/react"
 import { useTheme } from "next-themes"
 import Image from "next/image"
-import { useState } from "react"
+import React, { useState } from "react"
 import BLogo from '../../public/logo/black.png'
 import WLogo from '../../public/logo/white.png'
 import Link from "next/link"
 import CstmButton from "@/components/cstmButton"
 import { usePathname } from "next/navigation"
 import CstmPopOver from "@/components/popOver"
-import { GithubIcon } from "../../public/svg/githubIcon"
-import { SunIcon } from "../../public/svg/sunIcon"
-import { MoonIcon } from "../../public/svg/moonIcon"
+import { GithubIcon } from "../../public/svg/icons"
+import { SunIcon } from "../../public/svg/icons"
+import { MoonIcon } from "../../public/svg/icons"
 import NavMenus from "./navMenu"
-import { TGitHubDatas } from "@/lib/types/githubDatas"
+import { TGitHubDatas } from "@/lib/interfaces/githubDatas"
 
 
 
@@ -90,7 +90,7 @@ const Nav: React.FC<TGitHubDatas> = (props) => {
         ghdata={ghdata}
         >
           <Button isIconOnly variant="light">
-            <GithubIcon />
+            <GithubIcon size={24}/>
           </Button>
 
         </CstmPopOver>

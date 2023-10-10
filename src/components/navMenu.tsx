@@ -5,8 +5,8 @@ import { NavbarMenu, NavbarMenuItem } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
-export default function NavMenus () {
-  
+export default function NavMenus() {
+
   const { theme } = useTheme()
   const menuItems = [
     "home",
@@ -17,7 +17,7 @@ export default function NavMenus () {
     "download CV"
   ]
 
-  return(
+  return (
     <NavbarMenu>
       {menuItems.map((item, index) => (
         <NavbarMenuItem key={`${item}-${index}`}>
@@ -32,11 +32,6 @@ export default function NavMenus () {
           }
         </NavbarMenuItem>
       ))}
-      <NavbarMenuItem>
-        <CstmButton>
-          <Link className={theme === "dark" ? "text-black font-bold capitalize" : "text-white font-bold capitalize"} href='/update'>Update</Link>
-        </CstmButton>
-      </NavbarMenuItem>
     </NavbarMenu>
   )
 } 
