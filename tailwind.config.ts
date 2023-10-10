@@ -12,6 +12,8 @@ const config: Config = {
     extend: {
     height: {
         'calc-4': 'calc(100vh - 4rem)',
+        'calc-5': 'calc(100vh - 5rem)',
+        'calc-6': 'calc(100vh - 6rem)',
       },
       animation: {
         'gradient-x':'gradient-x 5s ease infinite',

@@ -64,25 +64,27 @@ export default function CstmPopOver({ ghdata, children }: TProps) {
             <Chip className="tracking-wider shadow-sm"><span className="font-bold">{totalFollowers}</span> {" Followers "}</Chip>
             <Chip className="tracking-wider shadow-sm"><span className="font-bold">{totalFollowings}</span> {" Following "}</Chip>
             <span
-              className="tracking-wider hover:text-blue-500 cursor-pointer transition-all duration-300 w-full text-center"
-              onClick={() => setOpenContainer(prev => !prev)}>{openContainer ? "Less" : "More"} </span>
+              className="tracking-wider select-none hover:text-blue-500 cursor-pointer transition-all duration-300 w-full text-center"
+              onClick={() => setOpenContainer(prev => !prev)}>{openContainer ? "Hide" : "More"} </span>
           </div>
-          <div className={`w-full mt-3 rounded-xl mb-2  transition-all duration-500 ${openContainer ? "h-96" : "h-[1px]"}`}>
-            <div className={`py-1 pt-4 transition-all duration-500 ${openContainer ? 'opacity-100' : 'opacity-0'}`}>
+          <div className={`w-full mt-3 rounded-xl mb-2 ease-in duration-300 ${openContainer ? "h-72" : "h-[1px]"}`}>
+            <div className={`py-1 pt-4`}>
               <div className="w-full flex align-center flex-col items-center">
                 <Tabs size="sm" aria-label="Tabs follow">
                   <Tab
                     key="followers"
                     className="w-full"
                     title="Followers" >
-                    {ghdata.followers.map((item, index) => <Follow key={index} props={item} />)}
+                    <ScrollShadow className="w-full h-[14rem]">
+                      {ghdata.followers.map((item, index) => <Follow key={index} props={item} animate={`ease-in duration-200 ${openContainer ? 'opacity-100' : 'opacity-0'}`} />)}
+                    </ScrollShadow>
                   </Tab>
                   <Tab
                     key="followings"
                     className="w-full"
                     title="Followings" >
-                    <ScrollShadow className="w-full h-[300px]">
-                      {ghdata.followings.map((item, index) => <Follow key={index} props={item} />)}
+                    <ScrollShadow className="w-full h-[14rem]">
+                      {ghdata.followings.map((item, index) => <Follow key={index} props={item} animate={`ease-in duration-200 ${openContainer ? 'opacity-100' : 'opacity-0'}`} />)}
                     </ScrollShadow>
                   </Tab>
                 </Tabs>

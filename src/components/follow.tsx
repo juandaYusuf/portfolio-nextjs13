@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/image"
 
 type TProps = {
   avatar_url: string,
@@ -6,10 +6,12 @@ type TProps = {
   html_url: string,
 }
 
-export default function Follow({ props }: { props: TProps }) {
+export default function Follow({ props, animate }: { props: TProps, animate?: string }) {
+
   const { avatar_url, login, html_url } = props
+
   return (
-    <div className="flex gap-2 my-2">
+    <div className={`flex gap-2 my-2 ${!!animate ? animate : ''}`}>
       <div className="border-2 border-slate-400 rounded-full p-[2px]">
         <Image
           className="bg-slate-100 rounded-full"
