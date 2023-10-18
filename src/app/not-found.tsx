@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { PageNotfoundIcon } from "../../public/svg/pagenotfound"
+import { PageNotfoundIcon } from "./svg/pagenotfound"
 import { useTheme } from "next-themes";
 
 

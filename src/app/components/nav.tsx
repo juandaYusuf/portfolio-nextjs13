@@ -4,17 +4,17 @@ import { Button, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggl
 import { useTheme } from "next-themes"
 import Image from "next/image"
 import React, { useState } from "react"
-import BLogo from '../../public/logo/black.png'
-import WLogo from '../../public/logo/white.png'
+import BLogo from '../../../public/logo/black.png'
+import WLogo from '../../../public/logo/white.png'
 import Link from "next/link"
-import CstmButton from "@/components/cstmButton"
+import CstmButton from "@/app/components/cstmButton"
 import { usePathname } from "next/navigation"
-import CstmPopOver from "@/components/popOver"
-import { GithubIcon } from "../../public/svg/icons"
-import { SunIcon } from "../../public/svg/icons"
-import { MoonIcon } from "../../public/svg/icons"
+import CstmPopOver from "@/app/components/popOver"
+import { GithubIcon } from "../svg/icons"
+import { SunIcon } from "../svg/icons"
+import { MoonIcon } from "../svg/icons"
 import NavMenus from "./navMenu"
-import { TGitHubDatas } from "@/lib/interfaces/githubDatas"
+import { TGitHubDatas } from "@/app/lib/interfaces/githubDatas"
 
 
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { useTheme } from "next-themes"
-import { TwitterIcon, GithubIcon, InstagramIcon, FacebookIcon, LinkedInIcon, WhatsAppIcon, NextjsIcon, ArchLinuxIcon, TypescriptIcon, JavaScriptIcon, HtmlIcon, CssIcon, TailwindIcon, ReactJSIcon } from "../../public/svg/icons"
+import { TwitterIcon, GithubIcon, InstagramIcon, FacebookIcon, LinkedInIcon, WhatsAppIcon, NextjsIcon, ArchLinuxIcon, TypescriptIcon, JavaScriptIcon, HtmlIcon, CssIcon, TailwindIcon, ReactJSIcon } from "../svg/icons"
 
 
 export default function Footer() {
@@ -10,8 +10,8 @@ export default function Footer() {
 
 
   return (
-    <div className={`h-[40vh] w-full border-t-1 backdrop-blur-xl flex flex-col items-center ${theme === 'dark' ? 'border-slate-800  bg-[#00000058]' : 'border-slate-200 bg-[#ffffff58]'}`}>
-      <p className="  tracking-wide text-center my-3 text-3xl font-semibold ">Thank's for scrolling</p>
+    <div className={`min-h-[40vh] w-full border-t-1 backdrop-blur-xl flex flex-col items-center ${theme === 'dark' ? 'border-slate-800  bg-[#00000058]' : 'border-slate-200 bg-[#ffffff58]'}`}>
+      <p className="  tracking-wide text-center my-3 text-xl md:text-3xl font-semibold ">Thank's for scrolling</p>
       <div className="w-full flex justify-center pb-4">
         <div className="flex justify-center w-9/12 flex-col md:flex-row gap-5">
           <div className="w-full md:w-1/2">

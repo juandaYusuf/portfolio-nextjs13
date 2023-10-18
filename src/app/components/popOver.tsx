@@ -1,10 +1,10 @@
 import { Chip, Popover, PopoverContent, PopoverTrigger, ScrollShadow, Tab, Tabs } from "@nextui-org/react"
 import Image from "next/image"
 import CstmButton from "./cstmButton"
-import { GithubIcon } from "../../public/svg/icons"
+import { GithubIcon } from "../svg/icons"
 import { useState } from "react"
 import { useTheme } from "next-themes"
-import { TGitHubDatas } from "@/lib/interfaces/githubDatas"
+import { TGitHubDatas } from "@/app/lib/interfaces/githubDatas"
 import Follow from "./follow"
 
 
@@ -27,8 +27,7 @@ export default function CstmPopOver({ ghdata, children }: TProps) {
   return (
     <Popover
       placement="bottom"
-      className="max-w-[350px]"
-      showArrow
+      className="max-w-[360px]"
       shouldBlockScroll
       onClose={() => setOpenContainer(false)}
     >
@@ -36,7 +35,7 @@ export default function CstmPopOver({ ghdata, children }: TProps) {
         {children}
       </PopoverTrigger>
       <PopoverContent className={`${theme === "dark" ? "bg-[#28282870] backdrop-blur-lg" : "bg-[#ffffff70] backdrop-blur-lg"}`}>
-        <div className="px-1 py-2 overflow-hidden">
+        <div className="px-1 py-2 overflow-hidden max-w-[290px] md:max-w-full">
           {
             Object.keys(ghdata.profile).length
               ?
@@ -62,7 +61,7 @@ export default function CstmPopOver({ ghdata, children }: TProps) {
                     <CstmButton className="ms-2" name={"Profile"} />
                   </a>
                 </div>
-                <p className="text-slate-400 tracking-wider mt-2 ">{`${ghdata.profile.bio} ✨🎉`}</p>
+                <p className="text-slate-400 tracking-wider mt-2">{`${ghdata.profile.bio} ✨🎉`}</p>
               </>
               :
               <p className="text-slate-400 text-center font-semibold">❌ Sorry. Something went wrong 😢</p>

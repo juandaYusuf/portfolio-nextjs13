@@ -15,6 +15,7 @@ import HtmlIcon from "./htmlIcon"
 import CssIcon from "./cssIcon"
 import TailwindIcon from "./tailwindIcon"
 import ReactJSIcon from "./reactjsIcon"
+import LinuxIcon from "./linuxIcon"
 
 
 export {
@@ -34,6 +35,7 @@ export {
   HtmlIcon,
   CssIcon,
   TailwindIcon,
-  ReactJSIcon
+  ReactJSIcon,
+  LinuxIcon
 }
 

@@ -1,4 +1,4 @@
-import { TPorps } from "@/lib/types/svg";
+import { TPorps } from "@/app/lib/types/svg";
 
 export default function WhatsAppIcon(props: TPorps) {
   return (

@@ -1,9 +1,9 @@
 import Nav from "./nav"
-import Footer from "@/components/footer"
-import { getGitHubFollowers } from "@/lib/apiRequests/githubFollowers"
-import { getGitHubFollowings } from "@/lib/apiRequests/githubFolowings"
-import { getGitHubProfile } from '@/lib/apiRequests/githubProfile'
-import { TProfile } from "@/lib/interfaces/githubDatas"
+import Footer from "@/app/components/footer"
+import { getGitHubFollowers } from "@/app/lib/apiRequests/githubFollowers"
+import { getGitHubFollowings } from "@/app/lib/apiRequests/githubFolowings"
+import { getGitHubProfile } from '@/app/lib/apiRequests/githubProfile'
+import { TProfile } from "@/app/lib/interfaces/githubDatas"
 
 export default async function HeaderAndFooter({ children }: { children: React.ReactNode }) {
 
