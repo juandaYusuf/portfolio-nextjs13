@@ -33,7 +33,9 @@ export default function HomeScreen0() {
             >
               Junior Frontend Web Developer using NextJS or ReactJS and I'm a fresh graduate of information systems
             </span>
-            <SpecialBTN name="Download CV" />
+            <a download='CV_YusufJuanda.pdf' href="/assets/docs/CVATS_eng.pdf">
+              <SpecialBTN name="Download CV" />
+            </a>
           </div>
         </div>
       </div>

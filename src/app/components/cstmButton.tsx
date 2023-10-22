@@ -7,13 +7,14 @@ type TProps = {
   children?: React.ReactNode | null
   className?: string | null
   chieldren2?: React.ReactNode | null
+  onPress?: () => void
 }
 
 function CstmButton(props: TProps) {
 
   const { theme } = useTheme()
   return (
-    <Button className={`${props.className } ${theme === "dark" ? "p-2 bg-white drop-shadow-lg rounded-xl hover:bg-slate-100 transition duration-150 " : "p-2 bg-black drop-shadow-lg rounded-xl hover:bg-slate-800 transition duration-150"}`}>
+    <Button onPress={props.onPress} className={`${props.className } ${theme === "dark" ? "p-2 bg-white drop-shadow-lg rounded-xl hover:bg-slate-100 transition duration-150 " : "p-2 bg-black drop-shadow-lg rounded-xl hover:bg-slate-800 transition duration-150"}`}>
       {
         props.name
         ?
