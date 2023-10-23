@@ -5,7 +5,7 @@ export default function HomeScreen3() {
 
   return (
     <div className="h-screen flex flex-col items-center pt-20">
-      <p className="text-4xl md:text-5xl font-bold mb-3 md:mb-5">My Biography</p>
+      <p className="text-4xl md:text-5xl font-bold mb-3 md:mb-5">My Experience</p>
       <div className="flex h-full justify-center">
 
         {/* <div>

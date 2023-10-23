@@ -1,5 +1,5 @@
-import SpecialBTN from "./specialBTN"
-
+'use client'
+import CVDownloader from "./cvDownloader";
 
 export default function HomeScreen0() {
 
@@ -33,9 +33,9 @@ export default function HomeScreen0() {
             >
               Junior Frontend Web Developer using NextJS or ReactJS and I'm a fresh graduate of information systems
             </span>
-            <a download='CV_YusufJuanda.pdf' href="/assets/docs/CVATS_eng.pdf">
-              <SpecialBTN name="Download CV" />
-            </a>
+
+            <CVDownloader/>
+            
           </div>
         </div>
       </div>
