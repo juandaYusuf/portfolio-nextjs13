@@ -20,7 +20,7 @@ export interface IUser {
   site_admin: boolean
 }
 
-export interface TProfile extends IUser {
+export interface IProfile extends IUser {
   name: string
   company: string
   email: string
@@ -28,8 +28,17 @@ export interface TProfile extends IUser {
 }
 
 export interface TGitHubDatas {
-  profile: TProfile
+  profile: IProfile
   followers: IUser[]
   followings: IUser[]
 }
 
+export interface IRespositories {
+  name: string
+  html_url: string
+  language: string
+  stargazers_count: number
+  visibility: string
+  created_at: string
+  updated_at: string
+}

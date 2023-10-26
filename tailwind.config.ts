@@ -28,6 +28,7 @@ const config: Config = {
         'scale-card5-on-scroll': 'scale-card5-on-scroll linear forwards',
         'scale-card6-on-scroll': 'scale-card6-on-scroll linear forwards',
         'scale-card7-on-scroll': 'scale-card7-on-scroll linear forwards',
+        'slide-left': 'slide-left .5s ease-out forwards',
       },
       keyframes: {
         'gradient-y': {
@@ -62,19 +63,18 @@ const config: Config = {
         },
         'fade-out-on-scroll': {
           '0%': {
+            'transform': 'translateY(0%)',
             'opacity': '1',
-            'scale': '1',
             'filter': 'blur(0)',
           },
           '20%': {
             'z-index': '-1'
           },
           '50%': {
-            'opacity': '0',
             'z-index': '-1'
           },
           '100%': {
-            'scale': '4',
+            'transform': 'translateY(100%)',
             'filter': 'blur(20px)',
             'opacity': '0',
             'z-index': '-1'
@@ -114,6 +114,16 @@ const config: Config = {
           to: {
             'scale': '1.0'
           }
+        },
+        'slide-left': {
+          from: {
+            'transform': 'translateX(100%)',
+            'opacity': '0'
+          },
+          to: {
+            'transform': 'translateX(0%)',
+            'opacity': '1'
+          }
         }
       }
     },
@@ -125,12 +135,14 @@ const config: Config = {
         colors: {
           "foreground": "#000000",
           "secondary": "#F4F4F5",
+          "danger": "#E2E8F0"
         },
       },
       dark: {
         colors: {
           "foreground": "#FFFFFF",
-          "secondary": "#27272A"
+          "secondary": "#27272A",
+          "danger": "#444449"
         },
       },
     },

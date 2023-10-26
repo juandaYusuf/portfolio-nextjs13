@@ -4,7 +4,7 @@ import CstmButton from "./cstmButton"
 import { GithubIcon } from "../svg/icons"
 import { useState } from "react"
 import { useTheme } from "next-themes"
-import { TGitHubDatas } from "@/app/lib/interfaces/githubDatas"
+import { TGitHubDatas } from "../lib/interfaces/githubDatas"
 import Follow from "./follow"
 
 
@@ -27,7 +27,7 @@ export default function CstmPopOver({ ghdata, children }: TProps) {
   return (
     <Popover
       placement="bottom"
-      className="max-w-[360px]"
+      className="md:max-w-[360px] mx-2 md:mx-0"
       shouldBlockScroll
       onClose={() => setOpenContainer(false)}
     >
@@ -35,7 +35,7 @@ export default function CstmPopOver({ ghdata, children }: TProps) {
         {children}
       </PopoverTrigger>
       <PopoverContent className={`${theme === "dark" ? "bg-[#28282870] backdrop-blur-lg" : "bg-[#ffffff70] backdrop-blur-lg"}`}>
-        <div className="px-1 py-2 overflow-hidden max-w-[290px] md:max-w-full">
+        <div className="px-1 py-2 overflow-hidden ">
           {
             Object.keys(ghdata.profile).length
               ?
@@ -44,7 +44,7 @@ export default function CstmPopOver({ ghdata, children }: TProps) {
                   <GithubIcon size={24}/>
                   <span>My GitHub Account</span>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 w-full">
                   <div className="border-2 border-slate-400 rounded-full p-[2px] h-[40px] w-[40px]">
                     <Image
                       className="bg-slate-100 rounded-full"

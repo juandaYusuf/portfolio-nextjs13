@@ -1,7 +1,7 @@
-import { TProfile } from '../interfaces/githubDatas'
+import { IProfile } from '../interfaces/githubDatas'
 
 
-export const getGitHubProfile = async (): Promise<TProfile> => {
+export const getGitHubProfile = async (): Promise<IProfile> => {
 
   try {
     const req = await fetch(`${process.env.API_BASEURL}/users/juandaYusuf`, {
