@@ -97,9 +97,10 @@ export default async function RootLayout({
 }) {
 
 
+
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`scrollbar-hide ${inter.className}`}>
         <div className="fixed bottom-0 left-0 h-64 w-56 md:h-[40rem] md:w-96 translate-x-14 -rotate-[30deg] blur-2xl md:blur-3xl -z-10 r-0 b-0 bg-gradient-to-r from-sky-500 via-purple-500 opacity-[0.3]" />
         <div className="fixed right-0 h-96 w-48 md:h-[40rem] md:w-96 translate-x-20 md:translate-x-14 translate-y-20 -rotate-[80deg] rounded-t-full blur-3xl -z-10 r-0 b-0 bg-gradient-to-r from-sky-600 to-purple-400 opacity-[0.25] " />
         <Providers>

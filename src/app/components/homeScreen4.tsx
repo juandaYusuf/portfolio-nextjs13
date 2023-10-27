@@ -6,6 +6,7 @@ import GHRepos from "./ghRepo";
 import { useRef, useState } from "react";
 import { ScrollShadow } from "@nextui-org/react";
 import FavMusic from "./favMusic";
+import Hobbies from "./hobbies";
 
 
 type TMenus = {
@@ -55,7 +56,7 @@ export default function HomeScreen4({ repoDatas }: { repoDatas: Partial<IResposi
       <p className="text-4xl md:text-5xl font-bold mb-2">Others</p>
       <div className="flex p-4 w-full h-full md:max-w-[60%] justify-center">
         <div className={`${theme === 'dark' ? 'border border-gray-700' : 'border'} w-full h-[80%] relative rounded-xl overflow-hidden shadow-xl bg-secondary`}>
-          <div className={`${theme === 'dark' ? 'border-b border-gray-600' : 'border-b'} h-[30px] absolute z-10 w-full flex items-center justify-between px-2 bg-danger shadow-md`}>
+          <div className={`${theme === 'dark' ? 'border-b border-gray-600' : 'border-b'} h-[30px] absolute z-10 min-w-full flex items-center justify-between px-2 bg-danger/80 backdrop-blur-xl shadow-md`}>
             <div className="flex gap-2">
               <div className="h-3 w-3 rounded-full shadow-sm bg-red-500" />
               <div className="h-3 w-3 rounded-full shadow-sm bg-green-500" />
@@ -80,7 +81,7 @@ export default function HomeScreen4({ repoDatas }: { repoDatas: Partial<IResposi
             </div>
             <div className="w-[39px] rounded-full shadow-sm" />
           </div>
-          <ScrollShadow ref={repoRef} orientation="horizontal" hideScrollBar className="flex snap-mandatory snap-x gap-6 h-full w-full ">
+          <ScrollShadow ref={repoRef} isEnabled={false} orientation="horizontal" hideScrollBar className="flex snap-mandatory snap-x gap-6 h-full w-full ">
             <div className="min-w-full mt-5 snap-center">
               <GHRepos repoDatas={repoDatas} />
             </div>
@@ -88,7 +89,7 @@ export default function HomeScreen4({ repoDatas }: { repoDatas: Partial<IResposi
               <FavMusic />
             </div>
             <div className="min-w-full snap-center">
-              <FavMusic />
+              <Hobbies />
             </div>
           </ScrollShadow>
         </div>
