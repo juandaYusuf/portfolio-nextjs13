@@ -15,10 +15,11 @@ type TMenus = {
 }
 
 
-export default function HomeScreen4({ repoDatas }: { repoDatas: Partial<IRespositories>[] }) {
+export default function HomeScreen4({ repoDatas}: { repoDatas: Partial<IRespositories>[]}) {
   const { theme } = useTheme()
   const [showMenu, setShowMenu] = useState<number>(0)
   const repoRef = useRef<HTMLDivElement | null>(null)
+
 
   const menus: TMenus[] = [
     {

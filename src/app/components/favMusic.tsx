@@ -58,7 +58,7 @@ const stopIcon = (
 
 
 export default function FavMusic() {
-
+  
 
   const [isMusicPause, setIsMusicPause] = useState<TMusicControl>({ status: "Play", pause: true, stop: true })
   const [switchSong, setSwitchSong] = useState<number>(0)
@@ -69,21 +69,21 @@ export default function FavMusic() {
     {
       title: "Kana Boon LoFi Remix",
       // src: '/assets/music/naruto_kanaboon_lofi.mp3',
-      src: 'http://45.76.15.135/a2cc9aad-282e-4baa-9799-832c819c2b3a.mp3',
+      src: 'https://rr6---sn-2uuxa3vh-jb3e.googlevideo.com/videoplayback?expire=1698883657&ei=6ZNCZeqpD-q26dsP_a2O6AI&ip=2a01%3A4f8%3A190%3A8094%3A%3A2&id=o-ALSJwIOSRMI0YO9cQVIaEGyV4AsFjAfxy590aNftf4C-&itag=140&source=youtube&requiressl=yes&spc=UWF9f4JxMi0PLvDgoOUsdUwBHNId3bRIQvei0QrZuw&vprv=1&svpuc=1&mime=audio%2Fmp4&ns=WoU97dfhXcnzkZirb1gLVLAP&gir=yes&clen=2669573&dur=164.908&lmt=1626172203642336&keepalive=yes&fexp=24007246,24350018&beids=24350018&c=WEB&txp=5432434&n=ZY-Sn-1N54OCAgMbBIVr0&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AGM4YrMwRAIgHB-noo-QbBZmpmapUYj6leaeMJc0hsl4ze3JEd91Hz4CIEYd-K-TgVnJ-DseNFF3AtomDMUfISJAspgJWRR1_Smp&rm=sn-4g5e6d7e&req_id=10267d1f6a15a3ee&redirect_counter=2&cm2rm=sn-2uuxa3vh-jb3k7e&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=e6&mip=180.244.161.24&mm=29&mn=sn-2uuxa3vh-jb3e&ms=rdu&mt=1698861674&mv=m&mvi=6&pcm2cms=yes&pl=20&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pcm2cms,pl&lsig=AK1ks_kwRQIhAKOulO5mS6_H6oDqKjvcPyK9dg3hhrYsOPy7__PnLI87AiAF2SaOHetBZiEW69GVq2dPSMd6Dz8FwQLidR_DseL-NA%3D%3D',
       musicSrc: 'https://www.youtube.com/watch?v=zIXFUNfp8ac',
       thumbnail: '/assets/images/naruto.jpg',
       audioRef: useRef<HTMLAudioElement>(null)
     },
     {
       title: "Viva La Vida LoFi Remix",
-      src: '/assets/music/vivalavida_lofi.mp3',
+      src: 'https://rr5---sn-4g5ednz7.googlevideo.com/videoplayback?expire=1698883907&ei=45RCZd7PG5i76dsPpvGbsAk&ip=2a01%3A4f8%3A190%3A8094%3A%3A2&id=o-APHopZYOTrKSTs8hYUCIDBkWX3L5fh_QFwUq5VlMmBTp&itag=140&source=youtube&requiressl=yes&mh=XD&mm=31%2C26&mn=sn-4g5ednz7%2Csn-f5f7kn7z&ms=au%2Conr&mv=m&mvi=5&pl=41&initcwndbps=432500&spc=UWF9fxJBhAB6k8-KK1ehXBfVqaIqJvEFmkKrFNr0CA&vprv=1&svpuc=1&mime=audio%2Fmp4&ns=OH2EdxKBWdSA6qb5JkQYq_oP&gir=yes&clen=2480196&dur=153.205&lmt=1686011934425684&mt=1698861914&fvip=5&keepalive=yes&fexp=24007246&beids=24350018&c=WEB&txp=4432434&n=aNkTckBKshY6kQikf6w9k&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AK1ks_kwRQIgPQSD8XaIXNb7MVMO1srEE_K236KmOCs10MPJ2H_PrToCIQDqlyf9gQyGR8fX1TxvU223FhrEp47mD_IVs3OWdw26uA%3D%3D&sig=NGAGM4YrMwRQIgbolbMlM8nZ3Q8pbLhQPL7f9PvE-G8Ron7EMb8HCixvsCIfD0wv_OQjYAC=vRe4WO2_bn6APb2MD3kTQD00xerZHvVA=z',
       thumbnail: '/assets/images/vivalavida.jpg',
       musicSrc: 'https://www.youtube.com/watch?v=i0lW7x62Zfk',
       audioRef: useRef<HTMLAudioElement>(null)
     },
     {
       title: "Lofi Instrumental",
-      src: '/assets/music/lofi_hiphop.mp3',
+      src: 'https://rr2---sn-4g5e6nsd.googlevideo.com/videoplayback?expire=1698883960&ei=GJVCZZHjI8TD1gKc-YmQAQ&ip=2a01%3A4f8%3A190%3A8094%3A%3A2&id=o-ADChRIBTCmmAcNiqW1g5O6hJsuz7Qe7x71e1E06G58Cr&itag=140&source=youtube&requiressl=yes&mh=y3&mm=31%2C29&mn=sn-4g5e6nsd%2Csn-4g5edndk&ms=au%2Crdu&mv=m&mvi=2&pl=41&initcwndbps=432500&spc=UWF9f-VQxVWLwnr4AHlHWLeFMzm4oOKDCbpZZIDpmA&vprv=1&svpuc=1&mime=audio%2Fmp4&ns=5SrjBGSW-xv1pVBF2_JCTo4P&gir=yes&clen=2141637&dur=132.284&lmt=1676541406813264&mt=1698861914&fvip=3&keepalive=yes&fexp=24007246&beids=24350018&c=WEB&txp=5318224&n=EoqGGMo7N_kdQaA3ISUQk&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AGM4YrMwRQIgF0zUngbkONStmfxMXGMEHZcoRZacoDvbBXIUt7wdbJYCIQCZI9y4kGLcTQIRdD1FOzA5Nrz6BSOFlwTHRi0cowtbxA%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AK1ks_kwRAIgIughUpJzPdWNI5n0wgAm4hMUXztg-GtJt96qnBw3Va4CIBsfH6LoB852mLHQ9LnCXkVVZ_YAArFREdtn9HzaQCYj',
       thumbnail: '/assets/images/lofi.jpg',
       musicSrc: 'https://www.youtube.com/watch?v=HGMQbVfYVmI',
       audioRef: useRef<HTMLAudioElement>(null)
