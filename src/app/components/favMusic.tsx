@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Card, CardBody, Image, Link, Progress } from "@nextui-org/react"
+import { Button, Card, CardBody, Image, Link, Progress, ScrollShadow } from "@nextui-org/react"
 import { useEffect, useRef, useState } from "react"
 
 type TMusicControl = {
@@ -68,7 +68,8 @@ export default function FavMusic() {
   const musicList: TMusicList[] = [
     {
       title: "Kana Boon LoFi Remix",
-      src: '/assets/music/naruto_kanaboon_lofi.mp3',
+      // src: '/assets/music/naruto_kanaboon_lofi.mp3',
+      src: 'http://45.76.15.135/a2cc9aad-282e-4baa-9799-832c819c2b3a.mp3',
       musicSrc: 'https://www.youtube.com/watch?v=zIXFUNfp8ac',
       thumbnail: '/assets/images/naruto.jpg',
       audioRef: useRef<HTMLAudioElement>(null)
@@ -196,7 +197,21 @@ export default function FavMusic() {
 
 
   return (
-    <div className="h-full w-full p-7 flex flex-col rounded-t-3xl justify-end items-center font-bold bg-[url(/assets/images/music_bg.jpg)] bg-cover bg-center">
+    <div className="h-full w-full p-7 flex flex-col rounded-t-3xl justify-between items-center font-bold bg-[url(/assets/images/music_bg.jpg)] bg-cover bg-center">
+      <ScrollShadow className="w-full md:max-w-[610px] h-[15%] md:h-auto mb-1 md:mt-6">
+        {
+          musicList.map((item, index) => {
+            return (
+              <Card key={index} isBlurred shadow="sm" className="mb-2 h-[40px] border-t-2 border-l-2 border-r border-b border-danger/60 bg-background/60 dark:bg-default-100/50 w-full">
+                <CardBody className="p-2">
+                  <p className="text-sm">{item.title}</p>
+                </CardBody>
+              </Card>
+            )
+          })
+        }
+      </ScrollShadow>
+
       <Card
         isBlurred
         className="border-t-2 border-l-2 border-r border-b border-danger/60 bg-background/60 dark:bg-default-100/50 max-w-[610px]"
@@ -309,53 +324,6 @@ export default function FavMusic() {
           </div>
         </CardBody>
       </Card>
-
-
-
-
-
-
-
-
-
-
-
-
-      {/* <div className="flex flex-col items-center gap-5">
-        {
-          musicList.map((item, index) => {
-            return switchSong === index
-              &&
-              <div key={index}>
-                <p>{item.title}</p>
-                <audio ref={item.audioRef} >
-                  <source src={item.src} type="audio/mpeg" />
-                  Your browser does not support the audio element
-                </audio>
-              </div>
-          })
-        }
-
-        <div className="flex gap-5">
-          <button onClick={() => { setSwitchSong(prev => prev <= 0 ? 0 : prev - 1) }} >{"<"} Prev</button>
-          <button onClick={() => setIsMusicPause(prev => {
-            return {
-              ...prev,
-              pause: !prev.pause,
-              stop: false
-            }
-          })
-          }>{isMusicPause.status}</button>
-          <button onClick={() => setIsMusicPause(prev => {
-            return {
-              ...prev,
-              stop: true,
-              pause: true
-            }
-          })}>Stop</button>
-          <button onClick={() => setSwitchSong(prev => prev >= musicList.length - 1 ? musicList.length - 1 : prev + 1)}>Next {">"}</button>
-        </div>
-      </div> */}
     </div >
   )
 }

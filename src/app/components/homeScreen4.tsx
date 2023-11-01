@@ -52,11 +52,11 @@ export default function HomeScreen4({ repoDatas }: { repoDatas: Partial<IResposi
 
 
   return (
-    <div className="h-screen flex flex-col items-center pt-20">
+    <div className="h-screen flex flex-col items-center pt-20 ">
       <p className="text-4xl md:text-5xl font-bold mb-2">Others</p>
       <div className="flex p-4 w-full h-full md:max-w-[60%] justify-center">
-        <div className={`${theme === 'dark' ? 'border border-gray-700' : 'border'} w-full h-[80%] relative rounded-xl overflow-hidden shadow-xl bg-secondary`}>
-          <div className={`${theme === 'dark' ? 'border-b border-gray-600' : 'border-b'} h-[30px] absolute z-10 min-w-full flex items-center justify-between px-2 bg-danger/80 backdrop-blur-xl shadow-md`}>
+        <div className={`${theme === 'dark' ? 'border border-gray-700' : 'border'} w-full h-[90%] md:h-[80%] relative rounded-xl overflow-hidden shadow-xl bg-secondary`}>
+          <div className={`${theme === 'dark' ? 'border-b border-gray-600' : 'border-b'} h-[30px] absolute z-10 min-w-full flex items-center justify-between px-2 bg-danger/80 backdrop-blur-xl shadow-md rounded-t-xl`}>
             <div className="flex gap-2">
               <div className="h-3 w-3 rounded-full shadow-sm bg-red-500" />
               <div className="h-3 w-3 rounded-full shadow-sm bg-green-500" />
