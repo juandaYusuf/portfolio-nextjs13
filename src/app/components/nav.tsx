@@ -1,9 +1,9 @@
 'use client'
 
-import { Button, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Switch } from "@nextui-org/react"
+import { Button, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Popover, PopoverContent, PopoverTrigger, Switch } from "@nextui-org/react"
 import { useTheme } from "next-themes"
 import Image from "next/image"
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import BLogo from '../../../public/logo/black.png'
 import WLogo from '../../../public/logo/white.png'
 import Link from "next/link"
@@ -21,14 +21,16 @@ import { TGitHubDatas } from "@/app/lib/interfaces/githubDatas"
 const Nav: React.FC<TGitHubDatas> = (props) => {
 
   const { theme, setTheme } = useTheme()
+  const [translateX, setTranslateX] = useState('hidden')
+  const [themeSwitcher, setThemeSwitcher] = useState(false)
   const [windowScrollY, setWindowScrollY] = useState<number>(0)
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   const pathname = usePathname()
   const ghdata = {
-    profile : props.profile, 
-    followers : props.followers,
-    followings : props.followings
-  } 
+    profile: props.profile,
+    followers: props.followers,
+    followings: props.followings
+  }
   const menuItems = [
     "home",
     "portfolio",
@@ -37,6 +39,26 @@ const Nav: React.FC<TGitHubDatas> = (props) => {
     "about",
     "download CV"
   ]
+
+  useEffect(() => {
+    let localThemes = localStorage.getItem('theme')
+    setTheme(localThemes ? localThemes : 'light')
+    setThemeSwitcher(localThemes ? localThemes === 'dark' : false)
+  }, [theme])
+
+  useEffect(() => {
+    if (pathname === '/') {
+      setTranslateX('translate-x-[10px] w-[50px]')
+    } else if (pathname === '/portfolio') {
+      setTranslateX('translate-x-[83px] w-[69px]')
+    }else if (pathname === '/skills') {
+      setTranslateX('translate-x-[176px] w-[40px]')
+    }else if (pathname === '/introducing') {
+      setTranslateX('translate-x-[241px] w-[90px]')
+    }else if (pathname === '/about') {
+      setTranslateX('translate-x-[355px] w-[50px]')
+    }
+  }, [pathname])
 
 
   return (
@@ -55,60 +77,77 @@ const Nav: React.FC<TGitHubDatas> = (props) => {
 
       <NavbarContent className="sm:hidden" justify="center">
         <NavbarBrand>
-          <Image src={theme === "dark" ? WLogo : BLogo} width={60} height={60} alt="Logo" />
+          <Image src={themeSwitcher ? WLogo : BLogo} width={60} height={60} alt="Logo" />
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-3 " justify="center">
         <NavbarBrand>
-          <Image src={theme === "dark" ? WLogo : BLogo} width={60} height={60} alt="Logo" />
+          <Image src={themeSwitcher ? WLogo : BLogo} width={60} height={60} alt="Logo" />
         </NavbarBrand>
-        {
-          menuItems.map((items, index) => (
-            <NavbarItem key={index}>
-              {
-                items !== "download CV"
-                  ?
-                  <div className={`py-2 transition duration-200 ${pathname === `/${items}` || pathname === '/' && items === "home" ? theme === "dark" ? "border-b-3 border-white text-white" : "border-b-3 border-black text-black" : " border-b-3 border-transparent text-gray-400"}`}>
-                    <Link
-                      className={`capitalize font-semibold duration-200 py-1 px-3  ${theme === "dark" ? "hover:text-white hover:bg-gray-700 hover:rounded-md hover:border-0" : "hover:text-black hover:bg-gray-100 hover:rounded-md hover:border-0"}`}
-                      href={items === 'home' ? '/' : items}>
-                      {items}
-                    </Link>
-                  </div>
-                  :
-                  windowScrollY >= 560
-                  &&
-                  <CstmButton name={items} />
-              }
-            </NavbarItem>
-          ))
-        }
+        <div className="flex flex-col">
+          <div className="flex h-[40px] items-center">
+            {
+              menuItems.map((items, index) => (
+                <NavbarItem key={index}>
+                  {
+                    items !== "download CV"
+                      ?
+                      <Link
+                        className={`capitalize font-semibold duration-200 py-1 px-3  ${themeSwitcher ? "hover:text-white hover:bg-gray-700 hover:rounded-md hover:border-0" : "hover:text-black hover:bg-gray-100 hover:rounded-md hover:border-0"}`}
+                        href={items === 'home' ? '/' : items}>
+                        {items}
+                      </Link>
+                      :
+                      windowScrollY >= 560
+                      &&
+                      <Popover>
+                        <PopoverTrigger>
+                          <a>
+                            <CstmButton name={items} />
+                          </a>
+                        </PopoverTrigger>
+                        <PopoverContent className="p-1">
+                          <div className="px-2 py-2 flex flex-col gap-2">
+                            <p className="font-bold">Select CV language</p>
+                            <a className={`${themeSwitcher ? 'bg-slate-800' : 'bg-slate-100'}  p-2 rounded-lg hover:text-blue-500 transition duration-300`} download href="/assets/docs/CV_YusufJuanda_En.pdf">
+                              Curriculum Vitae - English
+                            </a>
+                            <a className={`${themeSwitcher ? 'bg-slate-800' : 'bg-slate-100'}  p-2 rounded-lg hover:text-blue-500 transition duration-300`} download href="/assets/docs/CV_YusufJuanda_Id.pdf">
+                              Curriculum Vitae - Indonesian
+                            </a>
+                          </div>
+                        </PopoverContent>
+                      </Popover>
+                  }
+                </NavbarItem>
+              ))
+            }
+          </div>
+          <div className={`${translateX} h-[3px] rounded-full duration-300 bg-white`} />
+        </div>
       </NavbarContent>
       <NavbarContent justify="end">
         <CstmPopOver
-        ghdata={ghdata}
+          ghdata={ghdata}
         >
           <Button isIconOnly variant="light">
-            <GithubIcon size={24}/>
+            <GithubIcon size={24} />
           </Button>
 
         </CstmPopOver>
         <NavbarItem>
           <Switch
+            isSelected={themeSwitcher}
+            startContent={<SunIcon />}
+            endContent={<MoonIcon />}
             size="sm"
-            color="secondary"
+            onValueChange={(value) => setTheme(value ? "dark" : "light")}
             thumbIcon={({ isSelected, className }) => {
-              if (isSelected) {
-                setTheme('dark')
-              } else {
-                setTheme('light')
-              }
-              return (
-                isSelected ?
-                  <SunIcon className={className} />
-                  :
-                  <MoonIcon className={className} />
+              return isSelected ? (
+                <MoonIcon className={className} />
+              ) : (
+                <SunIcon className={className} />
               )
             }}>
           </Switch>

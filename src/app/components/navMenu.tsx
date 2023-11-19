@@ -2,12 +2,10 @@
 
 import CstmButton from "@/app/components/cstmButton";
 import { NavbarMenu, NavbarMenuItem } from "@nextui-org/react";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 
 export default function NavMenus() {
 
-  const { theme } = useTheme()
   const menuItems = [
     "home",
     "portfolio",

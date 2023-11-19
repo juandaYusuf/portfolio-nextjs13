@@ -2,7 +2,7 @@
 
 import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import { NextjsIcon, TypescriptIcon, JavaScriptIcon, HtmlIcon, CssIcon, TailwindIcon, ReactJSIcon, LinuxIcon } from "../svg/icons";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Reactjs from '../../../public/images/Reactjs.jpg'
@@ -29,6 +29,7 @@ export default function HomeScreen2() {
 
   const { theme } = useTheme()
   const pRef = useRef<HTMLParagraphElement>(null)
+  const [themeSwitcher, setThemeSwitcher] = useState('')
 
   const icons: TIcons<HTMLParagraphElement>[] = [
     {
@@ -119,6 +120,10 @@ export default function HomeScreen2() {
 
   }, [])
 
+  useEffect(() => {
+    setThemeSwitcher(theme!)
+  }, [theme])
+
 
 
   return (
@@ -131,7 +136,7 @@ export default function HomeScreen2() {
               <div key={item.name} ref={item.refElements} className={`${item.scroll_animation} origin-top [animation-timeline:scroll()] translate-y-20 duration-1000 sticky px-4`}>
                 <Card
                   isBlurred
-                  className={`py-4 border ${theme === "dark" ? "border-slate-600" : "border-slate-300"}`}
+                  className={`py-4 border ${themeSwitcher === "dark" ? "border-slate-600" : "border-slate-300"}`}
                 >
                   <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                     <p className="text-tiny uppercase font-bold">{item.name}</p>
@@ -161,7 +166,7 @@ export default function HomeScreen2() {
                 <Card
                   shadow="md"
                   isBlurred
-                  className={`w-full mt-10 md:mt-32 border ${theme === "dark" ? "border-slate-600" : "border-slate-300"}`}
+                  className={`w-full mt-10 md:mt-32 border ${themeSwitcher === "dark" ? "border-slate-600" : "border-slate-300"}`}
                 >
                   <div className="flex w-full items-center">
                     <div className="w-2/4 h-full">

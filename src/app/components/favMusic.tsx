@@ -76,7 +76,7 @@ export default function FavMusic() {
     },
     {
       title: "Viva La Vida LoFi Remix",
-      src: 'https://rr5---sn-4g5ednz7.googlevideo.com/videoplayback?expire=1698883907&ei=45RCZd7PG5i76dsPpvGbsAk&ip=2a01%3A4f8%3A190%3A8094%3A%3A2&id=o-APHopZYOTrKSTs8hYUCIDBkWX3L5fh_QFwUq5VlMmBTp&itag=140&source=youtube&requiressl=yes&mh=XD&mm=31%2C26&mn=sn-4g5ednz7%2Csn-f5f7kn7z&ms=au%2Conr&mv=m&mvi=5&pl=41&initcwndbps=432500&spc=UWF9fxJBhAB6k8-KK1ehXBfVqaIqJvEFmkKrFNr0CA&vprv=1&svpuc=1&mime=audio%2Fmp4&ns=OH2EdxKBWdSA6qb5JkQYq_oP&gir=yes&clen=2480196&dur=153.205&lmt=1686011934425684&mt=1698861914&fvip=5&keepalive=yes&fexp=24007246&beids=24350018&c=WEB&txp=4432434&n=aNkTckBKshY6kQikf6w9k&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AK1ks_kwRQIgPQSD8XaIXNb7MVMO1srEE_K236KmOCs10MPJ2H_PrToCIQDqlyf9gQyGR8fX1TxvU223FhrEp47mD_IVs3OWdw26uA%3D%3D&sig=NGAGM4YrMwRQIgbolbMlM8nZ3Q8pbLhQPL7f9PvE-G8Ron7EMb8HCixvsCIfD0wv_OQjYAC=vRe4WO2_bn6APb2MD3kTQD00xerZHvVA=z',
+      src: 'http://127.0.0.1:8000/stream',
       thumbnail: '/assets/images/vivalavida.jpg',
       musicSrc: 'https://www.youtube.com/watch?v=i0lW7x62Zfk',
       audioRef: useRef<HTMLAudioElement>(null)
