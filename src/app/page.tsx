@@ -8,6 +8,7 @@ import { GithubRepositories } from './lib/apiRequests/githubRepositories'
 export default async function Home() {
 
   const repositoryDatas = await GithubRepositories().then(res => res).catch(() => [])
+  const repositoryDatasReversed = repositoryDatas.reverse() 
   
 
   return (
@@ -16,7 +17,7 @@ export default async function Home() {
       <HomeScreen1 />
       <HomeScreen2 />
       <HomeScreen3 />
-      <HomeScreen4  repoDatas={repositoryDatas}/>
+      <HomeScreen4  repoDatas={repositoryDatasReversed}/>
     </>
   )
 }

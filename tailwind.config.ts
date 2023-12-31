@@ -29,6 +29,7 @@ const config: Config = {
         'scale-card6-on-scroll': 'scale-card6-on-scroll linear forwards',
         'scale-card7-on-scroll': 'scale-card7-on-scroll linear forwards',
         'slide-left': 'slide-left .5s ease-out forwards',
+        'line-around': 'line-around 8s linear infinite',
       },
       keyframes: {
         'gradient-y': {
@@ -123,6 +124,33 @@ const config: Config = {
           to: {
             'transform': 'translateX(0%)',
             'opacity': '1'
+          }
+        },
+        'line-around': {
+          '0%': {
+            'left': '2%',
+            'bottom': '50%',
+            'transform': 'rotate(0deg)',
+          },
+          '25%': {
+            'left': '79%',
+            'bottom': '50%',
+            'transform': 'rotate(0deg)',
+          },
+          '50%': {
+            'left': '79%',
+            'bottom': '50%',
+            'transform': 'rotate(180deg)',
+          },
+          '75%': {
+            'left': '2%',
+            'bottom': '50%',
+            'transform': 'rotate(180deg)',
+          },
+          '100%': {
+            'left': '2%',
+            'bottom': '50%',
+            'transform': 'rotate(360deg)',
           }
         }
       }

@@ -58,7 +58,7 @@ const stopIcon = (
 
 
 export default function FavMusic() {
-  
+
 
   const [isMusicPause, setIsMusicPause] = useState<TMusicControl>({ status: "Play", pause: true, stop: true })
   const [switchSong, setSwitchSong] = useState<number>(0)
@@ -197,21 +197,7 @@ export default function FavMusic() {
 
 
   return (
-    <div className="h-full w-full p-7 flex flex-col rounded-t-3xl justify-between items-center font-bold bg-[url(/assets/images/music_bg.jpg)] bg-cover bg-center">
-      <ScrollShadow className="w-full md:max-w-[610px] h-[15%] md:h-auto mb-1 md:mt-6">
-        {
-          musicList.map((item, index) => {
-            return (
-              <Card key={index} isBlurred shadow="sm" className="mb-2 h-[40px] border-t-2 border-l-2 border-r border-b border-danger/60 bg-background/60 dark:bg-default-100/50 w-full">
-                <CardBody className="p-2">
-                  <p className="text-sm">{item.title}</p>
-                </CardBody>
-              </Card>
-            )
-          })
-        }
-      </ScrollShadow>
-
+    <div className="h-full w-full p-7 flex flex-col rounded-t-3xl justify-center items-center font-bold bg-[url(/assets/images/music_bg.jpg)] bg-cover bg-center">
       <Card
         isBlurred
         className="border-t-2 border-l-2 border-r border-b border-danger/60 bg-background/60 dark:bg-default-100/50 max-w-[610px]"

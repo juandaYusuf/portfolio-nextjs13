@@ -82,7 +82,7 @@ export default function CstmPopOver({ ghdata, children }: TProps) {
                     key="followers"
                     className="w-full"
                     title="Followers" >
-                    <ScrollShadow className="w-full h-[14rem]">
+                    <ScrollShadow className="w-full h-[14rem]" hideScrollBar>
                       {ghdata.followers.map((item, index) => <Follow key={index} props={item} animate={`ease-in duration-200 ${openContainer ? 'opacity-100' : 'opacity-0'}`} />)}
                     </ScrollShadow>
                   </Tab>
@@ -90,7 +90,7 @@ export default function CstmPopOver({ ghdata, children }: TProps) {
                     key="followings"
                     className="w-full"
                     title="Followings" >
-                    <ScrollShadow className="w-full h-[14rem]">
+                    <ScrollShadow className="w-full h-[14rem]" hideScrollBar>
                       {ghdata.followings.map((item, index) => <Follow key={index} props={item} animate={`ease-in duration-200 ${openContainer ? 'opacity-100' : 'opacity-0'}`} />)}
                     </ScrollShadow>
                   </Tab>

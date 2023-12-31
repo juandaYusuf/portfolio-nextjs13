@@ -16,6 +16,10 @@ import CssIcon from "./cssIcon"
 import TailwindIcon from "./tailwindIcon"
 import ReactJSIcon from "./reactjsIcon"
 import LinuxIcon from "./linuxIcon"
+import NextjsOutlineIcon from "./nextjsOutlineIcon"
+import TypescriptOutlineIcon from "./typescriptOutlineIcon"
+import JavascriptOutlineIcon from "./javascriptOutlineIcon"
+import HtmlOutlineIcon from "./htmlOutlineIcon"
 
 
 export {
@@ -29,10 +33,14 @@ export {
   FacebookIcon,
   LinkedInIcon,
   NextjsIcon,
+  NextjsOutlineIcon,
   ArchLinuxIcon,
   TypescriptIcon,
+  TypescriptOutlineIcon,
   JavaScriptIcon,
+  JavascriptOutlineIcon,
   HtmlIcon,
+  HtmlOutlineIcon,
   CssIcon,
   TailwindIcon,
   ReactJSIcon,

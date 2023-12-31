@@ -2,18 +2,20 @@
 
 import { Button, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Popover, PopoverContent, PopoverTrigger, Switch } from "@nextui-org/react"
 import { useTheme } from "next-themes"
+
 import Image from "next/image"
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 import BLogo from '../../../public/logo/black.png'
 import WLogo from '../../../public/logo/white.png'
 import Link from "next/link"
 import CstmButton from "@/app/components/cstmButton"
-import { usePathname } from "next/navigation"
 import CstmPopOver from "@/app/components/popOver"
+import NavMenus from "./navMenu"
+
+import { usePathname } from "next/navigation"
 import { GithubIcon } from "../svg/icons"
 import { SunIcon } from "../svg/icons"
 import { MoonIcon } from "../svg/icons"
-import NavMenus from "./navMenu"
 import { TGitHubDatas } from "@/app/lib/interfaces/githubDatas"
 
 
@@ -51,12 +53,14 @@ const Nav: React.FC<TGitHubDatas> = (props) => {
       setTranslateX('translate-x-[10px] w-[50px]')
     } else if (pathname === '/portfolio') {
       setTranslateX('translate-x-[83px] w-[69px]')
-    }else if (pathname === '/skills') {
+    } else if (pathname === '/skills') {
       setTranslateX('translate-x-[176px] w-[40px]')
-    }else if (pathname === '/introducing') {
+    } else if (pathname === '/introducing') {
       setTranslateX('translate-x-[241px] w-[90px]')
-    }else if (pathname === '/about') {
+    } else if (pathname === '/about') {
       setTranslateX('translate-x-[355px] w-[50px]')
+    } else if ('/skills/[skilldetail]') {
+      setTranslateX('translate-x-[176px] w-[40px]')
     }
   }, [pathname])
 
@@ -95,7 +99,7 @@ const Nav: React.FC<TGitHubDatas> = (props) => {
                       ?
                       <Link
                         className={`capitalize font-semibold duration-200 py-1 px-3  ${themeSwitcher ? "hover:text-white hover:bg-gray-700 hover:rounded-md hover:border-0" : "hover:text-black hover:bg-gray-100 hover:rounded-md hover:border-0"}`}
-                        href={items === 'home' ? '/' : items}>
+                        href={items === 'home' ? '/' : `/${items}`}>
                         {items}
                       </Link>
                       :
@@ -124,7 +128,7 @@ const Nav: React.FC<TGitHubDatas> = (props) => {
               ))
             }
           </div>
-          <div className={`${translateX} h-[3px] rounded-full duration-300 bg-white`} />
+          <div className={`${translateX} h-[3px] rounded-full duration-300 bg-foreground`} />
         </div>
       </NavbarContent>
       <NavbarContent justify="end">

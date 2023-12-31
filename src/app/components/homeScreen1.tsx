@@ -1,9 +1,12 @@
 'use client'
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
+
 import { useEffect, useRef } from "react";
 import SpecialBTN from "./specialBTN";
-import { ArchLinuxIcon, CssIcon, GithubIcon, HtmlIcon, InstagramIcon, JavaScriptIcon, NextjsIcon, ReactJSIcon, TailwindIcon, TwitterIcon, TypescriptIcon, WhatsAppIcon } from "../svg/icons";
+import { ArchLinuxIcon, CssIcon, GithubIcon, HtmlIcon, InstagramIcon, JavaScriptIcon, NextjsIcon, ReactJSIcon, TailwindIcon, TwitterIcon, TypescriptIcon, WhatsAppIcon } from "../svg/icons"
 import { Button, Card, CardFooter, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
+
+
 import CstmButton from "./cstmButton";
 import facebook from '../../../public/images/facebook.jpg'
 import github from '../../../public/images/github.jpg'
@@ -20,7 +23,7 @@ type TRef<T> = {
 
 type TSocialMedia = {
   name: string,
-  image: typeof facebook
+  image: StaticImageData
   url: string
 }
 

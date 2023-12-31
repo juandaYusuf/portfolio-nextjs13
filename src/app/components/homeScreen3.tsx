@@ -3,7 +3,7 @@
 export default function HomeScreen3() {
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center pt-20">
+    <div className="h-screen flex flex-col justify-center items-center pt-40">
       <div className="h-full w-[2px] bg-foreground" />
       <p className="text-4xl md:text-5xl font-bold mb-2">Summery</p>
       <div className="flex px-4 w-full md:max-w-[60%] justify-center">
